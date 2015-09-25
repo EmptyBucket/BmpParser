@@ -1,0 +1,81 @@
+BitmapFileHeader:
+	Address:0
+	Details:To store general information about the Bitmap Image File
+-------------------------------------------------------
+bfType:
+	Value:b'BM'
+	Unpack value:19778
+	Address:0
+	Size:2
+	Details:The header field used to identify the BMP & DIB file is 0x42 0x4D in hexadecimal, same as BM in ASCII.The following entries are possible:BM - Windows 3.1x, 95, NT, ... etc; BA - OS/2 struct Bitmap Array; CI - OS/2 struct Color Icon; CP - OS/2 const Color Pointer; IC - OS/2 struct Icon; PT - OS/2 Pointer
+-------------------------------------------------------
+bfSize:
+	Value:b'\x0cP\x00\x00'
+	Unpack value:20492
+	Address:2
+	Size:4
+	Details:The size of the BMP file in bytes
+-------------------------------------------------------
+bfReserved1:
+	Value:b'\x00\x00'
+	Unpack value:0
+	Address:6
+	Size:2
+	Details:Reserved; actual value depends on the application that creates the image
+-------------------------------------------------------
+bfReserved2:
+	Value:b'\x00\x00'
+	Unpack value:0
+	Address:8
+	Size:2
+	Details:Reserved; actual value depends on the application that creates the image
+-------------------------------------------------------
+bfOffBits:
+	Value:b' \x00\x00\x00'
+	Unpack value:32
+	Address:10
+	Size:4
+	Details:The offset, i.e. starting address, of the byte where the bitmap image data (pixel array) can be found
+-------------------------------------------------------
+BitmapInfo:
+	Address:14
+	Details:To store detailed information about the bitmap image and define the pixel format
+-------------------------------------------------------
+Version:
+	Value:BITMAPCORE||OS21XHEADER
+-------------------------------------------------------
+bcSize:
+	Value:b'\x0c\x00\x00\x00'
+	Unpack value:12
+	Address:14
+	Size:4
+	Details:The size of this header
+-------------------------------------------------------
+bcWidth:
+	Value:b'\xc7\x01'
+	Unpack value:455
+	Address:18
+	Size:2
+	Details:The bitmap width in pixels (signed integer)
+-------------------------------------------------------
+bcHeight:
+	Value:b'U\x01'
+	Unpack value:341
+	Address:20
+	Size:2
+	Details:The bitmap height in pixels (signed integer)
+-------------------------------------------------------
+bcPlanes:
+	Value:b'\x01\x00'
+	Unpack value:1
+	Address:2
+	Size:22
+	Details:The number of color planes must be 1
+-------------------------------------------------------
+bcBitCount:
+	Value:b'\x01\x00'
+	Unpack value:1
+	Address:2
+	Size:24
+	Details:The number of bits per pixel, which is the color depth of the image. Typical values are 1, 4, 8, 16, 24 and 32
+-------------------------------------------------------

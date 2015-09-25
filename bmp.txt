@@ -1,0 +1,54 @@
+BMP
+	is a detailed internal structure of a table BMP 
+	file as a header and information. Image Verification 
+	allows you to pull out the color table and the pixel 
+	data, provides a GUI for easy operation information.
+
+Requires: PyQt4
+
+Used class batch mode:
+	BMP(object)
+And use the following methods:
+	getPixelData(self)
+	receiving pixel data for
+    getColorTable(self)
+    to obtain the color table
+    getByteArray(self)
+    for byte array image
+    getBitmapFileHeader(self)
+    for the header image with the corresponding fields
+    getBitmapInfo(self)	
+    for obtaining image information corresponding to the fields
+
+Used class batch mode:
+	PixelData(object)
+And use the following methods:
+    getPixelArray(self)
+	to obtain an array of pixels
+
+Used class batch mode:
+	BitmapFileHeader(Info)
+And use the following methods:
+	getListInfo(self)
+	to obtain information sheet
+    getAllInfo(self)
+    to obtain all the information
+    getName(self)
+    to get the name
+    getAddress(self)
+    to get the address
+    getType(self)
+    for type
+    getSize(self)
+    for size
+    getReserver1(self)
+    for reserve 1
+    getReserver2(self)
+    for reserve 2
+    getOffBits(self)
+    for bit shift
+
+Used class batch mode:
+	BitmapInfo
+And use the following methods:
+	methods depend on the version of the BMP file

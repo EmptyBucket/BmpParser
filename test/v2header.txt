@@ -1,0 +1,144 @@
+BitmapFileHeader:
+	Address:0
+	Details:To store general information about the Bitmap Image File
+-------------------------------------------------------
+bfType:
+	Value:b'BM'
+	Unpack value:19778
+	Address:0
+	Size:2
+	Details:The header field used to identify the BMP & DIB file is 0x42 0x4D in hexadecimal, same as BM in ASCII.The following entries are possible:BM - Windows 3.1x, 95, NT, ... etc; BA - OS/2 struct Bitmap Array; CI - OS/2 struct Color Icon; CP - OS/2 const Color Pointer; IC - OS/2 struct Icon; PT - OS/2 Pointer
+-------------------------------------------------------
+bfSize:
+	Value:b'D\x00(\x00'
+	Unpack value:2621508
+	Address:2
+	Size:4
+	Details:The size of the BMP file in bytes
+-------------------------------------------------------
+bfReserved1:
+	Value:b'\x00\x00'
+	Unpack value:0
+	Address:6
+	Size:2
+	Details:Reserved; actual value depends on the application that creates the image
+-------------------------------------------------------
+bfReserved2:
+	Value:b'\x00\x00'
+	Unpack value:0
+	Address:8
+	Size:2
+	Details:Reserved; actual value depends on the application that creates the image
+-------------------------------------------------------
+bfOffBits:
+	Value:b'F\x00\x00\x00'
+	Unpack value:70
+	Address:10
+	Size:4
+	Details:The offset, i.e. starting address, of the byte where the bitmap image data (pixel array) can be found
+-------------------------------------------------------
+BitmapInfo:
+	Address:14
+	Details:To store detailed information about the bitmap image and define the pixel format
+-------------------------------------------------------
+Version:
+	Value:BITMAPV2INFOHEADER
+-------------------------------------------------------
+bcSize:
+	Value:b'4\x00\x00\x00'
+	Unpack value:52
+	Address:14
+	Size:4
+	Details:The size of this header
+-------------------------------------------------------
+biWidth:
+	Value:b'\x00\x05\x00\x00'
+	Unpack value:1280
+	Address:18
+	Size:4
+	Details:The bitmap width in pixels (signed integer)
+-------------------------------------------------------
+biHeight:
+	Value:b'\x00\x04\x00\x00'
+	Unpack value:1024
+	Address:22
+	Size:4
+	Details:The bitmap height in pixels (signed integer)
+-------------------------------------------------------
+biPlanes:
+	Value:b'\x01\x00'
+	Unpack value:1
+	Address:26
+	Size:2
+	Details:The number of color planes must be 1
+-------------------------------------------------------
+biBitCount:
+	Value:b'\x10\x00'
+	Unpack value:16
+	Address:28
+	Size:2
+	Details:The number of bits per pixel, which is the color depth of the image. Typical values are 1, 4, 8, 16, 24 and 32
+-------------------------------------------------------
+biCompression:
+	Value:b'\x03\x00\x00\x00'
+	Unpack value:3
+	Address:30
+	Size:4
+	Details:The compression method being used. See the next table for a list of possible values
+-------------------------------------------------------
+biSizeImage:
+	Value:b'\x02\x00(\x00'
+	Unpack value:2621442
+	Address:34
+	Size:4
+	Details:The image size. This is the size of the raw bitmap data; a dummy 0 can be given for BI_RGB bitmaps
+-------------------------------------------------------
+biXPelsPerMeter:
+	Value:b'\xc3\x0e\x00\x00'
+	Unpack value:3779
+	Address:38
+	Size:4
+	Details:The horizontal resolution of the image. (pixel per meter, signed integer)
+-------------------------------------------------------
+biYPelsPerMeter:
+	Value:b'\xc3\x0e\x00\x00'
+	Unpack value:3779
+	Address:42
+	Size:4
+	Details:The vertical resolution of the image. (pixel per meter, signed integer)
+-------------------------------------------------------
+biClrUsed:
+	Value:b'\x00\x00\x00\x00'
+	Unpack value:0
+	Address:46
+	Size:4
+	Details:The number of colors in the color palette, or 0 to default to 2^n
+-------------------------------------------------------
+biClrImportant:
+	Value:b'\x00\x00\x00\x00'
+	Unpack value:0
+	Address:50
+	Size:4
+	Details:The number of important colors used, or 0 when every color is important; generally ignored
+-------------------------------------------------------
+bV2RedMask:
+	Value:b'\xe0\x07\x00\x00'
+	Unpack value:2016
+	Address:54
+	Size:4
+	Details:Bit mask to extract the intensity of the red channel values
+-------------------------------------------------------
+bV2GreenMask:
+	Value:b'\x1f\x00\x00\x00'
+	Unpack value:31
+	Address:58
+	Size:4
+	Details:Bit mask to extract the intensity of the green channel values
+-------------------------------------------------------
+bV2BlueMask:
+	Value:b'\x00\x00\x00\x00'
+	Unpack value:0
+	Address:62
+	Size:4
+	Details:Bit mask to extract the intensity of the blue channel values
+-------------------------------------------------------
